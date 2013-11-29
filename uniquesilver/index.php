@@ -1,13 +1,3 @@
-<?php
-  session_start();
-  $_SESSION['user'] = $username;
-
-  if(!isset($_SESSION['user'])){
-    //sudah login
-    
-  }
-?>
-
 <!DOCTYPE html>
 <head>
 	<title>Unique Silver</title>
@@ -27,13 +17,6 @@
 			<a href="keranjang.php" id="tab_cart">KERANJANG<div class="cart"></div></a>
 			<a href="akun.php" id="tab_account">AKUN</a>
 			<a href="daftar.php" id="tab_daftar">DAFTAR</a>
-
-      <?php
-        if(!isset($_SESSION['user'])){
-        //sudah login
-        echo "<a href='daftar.php' id='tab_daftar'>LOGOUT</a>";
-      }
-      ?>
     	</div>
     	<div class="grid_7 prefix_2 search">
 			<b>Cari :</b><input type="text" placeholder="Kata Kunci" id="filter_keyword"/>
