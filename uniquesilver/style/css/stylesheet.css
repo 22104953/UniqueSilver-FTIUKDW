@@ -309,6 +309,33 @@ body {
   margin-bottom: 10px;
 }
 
+.buttons {
+  margin: 10px;
+  background: #F8F8F8;
+  border: 1px solid #DDDDDD;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.buttons input {
+  padding: 0px;
+  margin: 0px;
+}
+.buttons table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.buttons table td {
+  vertical-align: middle;
+}
+
+.buttons span {
+  font-size: 12px;
+}
+
+.text_tengah {
+  margin: 10px;
+  text-align: justify;
+}
 
 
 
