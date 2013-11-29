@@ -1,6 +1,13 @@
 <?php
   include("koneksi.php");
-  $kategori = $_GET['kategori'];
+  $kode = $_GET['kode'];
+  $query = mysql_query("SELECT * from produk where kode = '$kode'");
+  $data = mysql_fetch_assoc($query);
+  $jumlah = mysql_num_rows($query);
+  $harga=$data['harga'];
+  $model=$data['deskripsi'];
+  $nama=$data['nama']
+
 
 ?>
 
@@ -20,7 +27,7 @@
 		</div>
 		<div class="grid_9 top_menu">
 			<a href="keranjang.php" id="tab_cart">KERANJANG<div class="cart"></div></a>
-			<a href="login.php" id="tab_account">AKUN</a>
+			<a href="akun.php" id="tab_account">AKUN</a>
 			<a href="daftar.php" id="tab_daftar">DAFTAR</a>
     	</div>
     	<div class="grid_7 prefix_2 search">
@@ -221,31 +228,76 @@
         <div class="center">
           <h1>
           <?php
-            echo $kategori;
+            echo $nama;
           ?>
           </h1>
           </div>
       </div>
       <div class="produk_tengah">
+<div class="a">
+          <div style="width: 100%; margin-bottom: 30px;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="text-align: center; width: 250px; vertical-align: top;">
+                	<?php
+                	 echo "<img src='image/upload/".$data['gambar_detail']."'/>";
+                  ?>
+                </td>
+                <td style="padding-left: 15px; width: 296px; vertical-align: top;">
+                  <table width="100%">
+                    <tr>
+                      <td><b>Harga :</b></td>
+                      <td>                 
+                        <span>
+                        <?php
+                        	echo "Rp. ".$harga;
+                        ?>
+           
 
-        <?php
-          
-          $query = mysql_query("SELECT * from produk where kategori = '$kategori'");
-          $ketemu = mysql_num_rows($query);
+                        </span> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Ketersediaan :</b></td>
+                      <td>
+                      		<?php
+                        	echo $jumlah;
+                        ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Model:</b></td>
+                      <td>
 
-          while($data = mysql_fetch_assoc($query)){
-              echo "<div class='produk_'>";
-              echo "<a href='produk_detail.php?kode=".$data['kode']."'>";
-              echo "<img src='image/upload/".$data['nama_gambar']."'/>";
+                      		<?php
+                        	echo $kode;
+                        ?>
+                      </td>
+                    </tr>
+                     <tr>
+                      <td><b>Material :</b></td>
+                      <td>
 
-              //<img src='image/upload/".$data['nama_gambar']."' title='Rectanglular Pave' alt='Rectanglular Pave''>";
-             // echo "<img src='upload/".$data['nama_gambar']."' alt='ava'/>";
-              echo "<a href='produk_detail.php?kode=".$data['kode']."'>".$data['nama']." </a><br/>";
-              echo "<span style='color: #999; font-size: 11px;'>".$data['kode']."</span><br/>";
-              echo "<span style='color: #900; font-weight: bold;'> Rp. ".$data['harga']."</span><br/>";
-              echo "</div>";
-          } 
-        ?>
+                      		<?php
+                        	echo $model;
+                        ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="http://facebook.com/"><img src="style/css/image/like.jpeg" height="25" width="60"></a></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <div class="content">
+                    Jumlah: <input type="text" name="quantity" size="3" value="1" />
+                    <a onclick="$('#product').submit();" id="add_to_cart" class="buttoncontent"><span>Tambah ke Keranjang</span></a></div>
+                    <div><input type="hidden" name="product_id" value="4836" />
+                    <input type="hidden" name="redirect" value="index9200.php?route=product/product&amp;product_id=4836" /></div>
+                </td>
+              </tr>
+            </table>
+          </div>  
+        </div>
 
 
        

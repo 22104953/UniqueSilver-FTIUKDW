@@ -20,7 +20,7 @@
 		</div>
 		<div class="grid_9 top_menu">
 			<a href="keranjang.php" id="tab_cart">KERANJANG<div class="cart"></div></a>
-			<a href="login.php" id="tab_account">AKUN</a>
+			<a href="akun.php" id="tab_account">AKUN</a>
 			<a href="daftar.php" id="tab_daftar">DAFTAR</a>
     	</div>
     	<div class="grid_7 prefix_2 search">
@@ -49,20 +49,20 @@
 	    						<td align="center" colspan="2" class="top"><b>PRODUK</b></td>
 	    					</tr>
 	          				<tr>
-				            	<td valign="top" width="1"><a href="layout.php?kategori=gelang"><img src="image/data/chace/gl.jpg" alt="Gelang" /></a></td>
-				            	<td align="left"><a href="layout.php?kategori=gelang">Gelang</a>
+				            	<td valign="top" width="1"><a href="gelang.php"><img src="image/data/chace/gl.jpg" alt="Gelang" /></a></td>
+				            	<td align="left"><a href="gelang.php">Gelang</a>
 	          				</tr>
 				         	<tr>
-				            	<td valign="top" width="1"><a href="layout.php?kategori=anting"><img src="image/data/chace/ant.jpg" alt="Anting" /></a></td>
-				            	<td align="left"><a href="layout.php?kategori=anting">Anting</a>
+				            	<td valign="top" width="1"><a href="anting.php"><img src="image/data/chace/ant.jpg" alt="Anting" /></a></td>
+				            	<td align="left"><a href="anting.php">Anting</a>
 				         	</tr>
 			          		<tr>
-			            		<td valign="top" width="1"><a href="layout.php?kategori=kalung"><img src="image/data/chace/kl.jpg" alt="Kalung" /></a></td>
-			            		<td align="left"><a href="layout.php?kategori=kalung">Kalung</a>
+			            		<td valign="top" width="1"><a href="kalung.php"><img src="image/data/chace/kl.jpg" alt="Kalung" /></a></td>
+			            		<td align="left"><a href="kalung.php">Kalung</a>
 			          		</tr>
 			          		<tr>
-				            	<td valign="top" width="1"><a href="layout.php?kategori=cincin"><img src="image/data/chace/cn.jpg" alt="cincin" /></a></td>
-				            	<td align="left"><a href="layout.php?kategori=cincin">Cincin</a>
+				            	<td valign="top" width="1"><a href="cincin.php"><img src="image/data/chace/cn.jpg" alt="cincin" /></a></td>
+				            	<td align="left"><a href="cincin.php">Cincin</a>
 			          		</tr>
 	          			</table>
 	          		</td>
@@ -134,8 +134,8 @@
 	    						<td colspan="2" align="center" class="top"><b>PRODUK BARU</b></td>
 	    					</tr>
 	    					<tr>
-              					<td valign="top" width="1"><a href="produk_detail.php?kode=AN0001"><img src="image/data/chace/AN0001.jpg"/></a></td>
-              					<td valign="center"><a href="produk_detail.php?kode=AN0001"><span style="font-size: 11px;">Rectanglular Pave</span></a>
+              					<td valign="top" width="1"><a href="an0001.php"><img src="image/data/chace/AN0001.jpg"/></a></td>
+              					<td valign="center"><a href="an0001.php"><span style="font-size: 11px;">Rectanglular Pave</span></a>
                     			<br />
                     			<span style="font-size: 11px; color: #900;">Rp.160,000.00</span>
                 				</td>
@@ -227,30 +227,24 @@
           </div>
       </div>
       <div class="produk_tengah">
-
-        <?php
-          
-          $query = mysql_query("SELECT * from produk where kategori = '$kategori'");
-          $ketemu = mysql_num_rows($query);
-
-          while($data = mysql_fetch_assoc($query)){
-              echo "<div class='produk_'>";
-              echo "<a href='produk_detail.php?kode=".$data['kode']."'>";
-              echo "<img src='image/upload/".$data['nama_gambar']."'/>";
-
-              //<img src='image/upload/".$data['nama_gambar']."' title='Rectanglular Pave' alt='Rectanglular Pave''>";
-             // echo "<img src='upload/".$data['nama_gambar']."' alt='ava'/>";
-              echo "<a href='produk_detail.php?kode=".$data['kode']."'>".$data['nama']." </a><br/>";
-              echo "<span style='color: #999; font-size: 11px;'>".$data['kode']."</span><br/>";
-              echo "<span style='color: #900; font-weight: bold;'> Rp. ".$data['harga']."</span><br/>";
-              echo "</div>";
-          } 
-        ?>
-
-
-       
+      	<div style="display: inline-block; width: 100%;">
+        <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px;">
+          <form action="proses_login.php" method="post">
+            Untuk pelanggan yang telah memiliki akun, silahkan login disini.<br />
+            <br />
+            <b>E-Mail:</b><br />
+            <input type="text" name="username" />
+            <br /><br />
+            <b>Password:</b><br />
+            <input type="password" name="password" /><br />
+            <a href="aaaa">Lupa Password?</a><br />
+            <div style="text-align: right;"><input id="login_button" type="submit" name="login_button" value="MASUK" /></div>
+          </form>
       </div>
     </div>
+</div></div>
+    
+
 	<div id="footer">
       <div class="sosmed">
         <b>Follow Us :</b>

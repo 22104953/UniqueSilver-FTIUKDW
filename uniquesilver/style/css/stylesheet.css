@@ -268,7 +268,7 @@ body {
 
 }
 .produk_ {
-  margin: 0px 0px 5px 10px;
+  margin: 10px 0px 5px 10px;
   float: left;
   width: 130px;
   float: left;
@@ -288,6 +288,29 @@ body {
 .produk_ a:hover {
   color: #730000;
 }
+
+.buttoncontent {
+  border: 1px solid #DDDDDD;
+  height: 30px;
+  background: url('image/tab_3.png') top left repeat-x;
+  padding: 8px 10px 8px 10px;
+  text-align: center;
+  }
+
+.buttoncontent {
+  color: #000;
+}
+
+.content { /* tambah keranjang */
+  background: #F7F7F7;
+  border: 1px solid #DDDDDD;
+  padding: 10px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+
+
 
 
 

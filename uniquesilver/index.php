@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  $_SESSION['user'] = $username;
+
+  if(!isset($_SESSION['user'])){
+    //sudah login
+    
+  }
+?>
+
 <!DOCTYPE html>
 <head>
 	<title>Unique Silver</title>
@@ -13,9 +23,17 @@
 			<img src="style/css/image/shipping.png"/>
 		</div>
 		<div class="grid_9 top_menu">
+
 			<a href="keranjang.php" id="tab_cart">KERANJANG<div class="cart"></div></a>
 			<a href="akun.php" id="tab_account">AKUN</a>
 			<a href="daftar.php" id="tab_daftar">DAFTAR</a>
+
+      <?php
+        if(!isset($_SESSION['user'])){
+        //sudah login
+        echo "<a href='daftar.php' id='tab_daftar'>LOGOUT</a>";
+      }
+      ?>
     	</div>
     	<div class="grid_7 prefix_2 search">
 			<b>Cari :</b><input type="text" placeholder="Kata Kunci" id="filter_keyword"/>
@@ -44,22 +62,22 @@
                 <th scope="col">&nbsp;</th>
               </tr>
               <tr>
-                <td colspan="2" rowspan="2" align="center"><a href="layout.php"><img src="image/product/home/anting/anting3.jpg" width="463" height="235"/ title="Anting" alt="Anting"></a></td>
-                <td colspan="2" rowspan="2" align="center"><a href="gelang.php"><img src="image/product/home/gelang/gelang1.jpg" width="463" height="235"title="Gelang" alt="Gelang"></a></td>
+                <td colspan="2" rowspan="2" align="center"><a href="layout.php?kategori=anting"><img src="image/product/home/anting/anting3.jpg" width="463" height="235"/ title="Anting" alt="Anting"></a></td>
+                <td colspan="2" rowspan="2" align="center"><a href="layout.php?kategori=gelang"><img src="image/product/home/gelang/gelang1.jpg" width="463" height="235"title="Gelang" alt="Gelang"></a></td>
               </tr>
               <tr>
               </tr>
               <tr>
-                <td align="center"><a href="cincin.php"><img src="image/product/home/cincin/cincin1.jpg" width="230" height="165" title="Cincin" alt="Cincin"></a></td></a>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/kalung/kalung1.jpg" width="230" height="165" title="Kalung" alt="Kalung"/></a>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/gelang/gelang2.jpg" width="230" height="165" title="Gelang" alt="Gelang"></a></td></a>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/kalung/kalung2.jpg" width="230" height="165" title="Kalung" alt="Kalung"/></a>
+                <td align="center"><a href="layout.php?kategori=cincin"><img src="image/product/home/cincin/cincin1.jpg" width="230" height="165" title="Cincin" alt="Cincin"></a></td></a>
+                <td align="center"><a href="layout.php?kategori=kalung"><img src="image/product/home/kalung/kalung1.jpg" width="230" height="165" title="Kalung" alt="Kalung"/></a>
+                <td align="center"><a href="layout.php?kategori=gelang"><img src="image/product/home/gelang/gelang2.jpg" width="230" height="165" title="Gelang" alt="Gelang"></a></td></a>
+                <td align="center"><a href="layout.php?kategori=kalung"><img src="image/product/home/kalung/kalung2.jpg" width="230" height="165" title="Kalung" alt="Kalung"/></a>
               </tr>
               <tr>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/anting/anting1.jpg" width="230" height="145" title="Anting" alt="Anting"></a></td>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/kalung/kalung3.jpg" width="230" height="145" title="Kalung" alt="Kalung"/></a>
-                <td align="center"><a href="indexf110.php?route=product/special"><img src="image/product/home/cincin/cincin2.jpg" width="230" height="145"title="Cincin" alt="Cincin"></a></td></a>
-                 <td align="center"><a href="xindef110.php?route=product/special"><img src="image/product/home/anting/anting2.jpg" width="230" height="145" title="Anting" alt="Anting"></a></td>
+                <td align="center"><a href="layout.php?kategori=anting"><img src="image/product/home/anting/anting1.jpg" width="230" height="145" title="Anting" alt="Anting"></a></td>
+                <td align="center"><a href="layout.php?kategori=kalung"><img src="image/product/home/kalung/kalung3.jpg" width="230" height="145" title="Kalung" alt="Kalung"/></a>
+                <td align="center"><a href="layout.php?kategori=cincin"><img src="image/product/home/cincin/cincin2.jpg" width="230" height="145"title="Cincin" alt="Cincin"></a></td></a>
+                 <td align="center"><a href="layout.php?kategori=anting"><img src="image/product/home/anting/anting2.jpg" width="230" height="145" title="Anting" alt="Anting"></a></td>
               </tr>
               <tr>
                 <td align="center">&nbsp;</td>
